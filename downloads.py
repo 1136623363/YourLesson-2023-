@@ -5,6 +5,7 @@ import setting
 import util
 import json
 import os
+import time
 
 headers = setting.headers
 session = util.get_session()
@@ -78,13 +79,14 @@ def save_to_file(type,methods):
     for i in range(1000):
         s = methods(page=i)
         data = json.loads(s)
-
+        print(data)
+        print(data.keys())
         if data['dataList'] is None or len(data['dataList'])==0:
             break
 
         path = os.path.abspath("data/"+type+('.csv'))
         #print(path)
-        file = open(path,mode="a+")
+        file = open(path,mode="a+",encoding='utf-8')
         for course in data['dataList']:
             for j in range(1000):
                 if len(course['tcList']) <= j:
@@ -99,6 +101,8 @@ def save_to_file(type,methods):
                 else:
                     pass
                 """
+        time.sleep(1)
+        print(i)
 
 def clear_data():
     path = os.path.abspath("data")

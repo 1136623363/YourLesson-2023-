@@ -29,7 +29,7 @@ courses =[
 
 
 # 延迟的单位是ms
-delay:int = 1000
+delay:int = 3000
 # 抢课的次数
 count:int = 3
 
@@ -43,13 +43,12 @@ url:str = "http://bkxk.szu.edu.cn/"
 headers:map =  {
     "Cookie": cookie.strip(),
     "token": token.strip(),
-    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36",
     "Accept": "application/json, text/javascript, */*; q=0.01",
     "Accept-Encoding": "gzip, deflate",
-    "Accept-Language": "en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7",
+    "Accept-Language": "zh-CN,zh;q=0.9",
     "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
     "Host": "bkxk.szu.edu.cn",
     "Pragma": "no-cache"
 }
-
 
